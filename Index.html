@@ -1,0 +1,30 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="login.css">
+    <title>Login - Bet App</title>
+</head>
+
+<body>
+    <div class="login-container" role="main" aria-label="Tela de login para aposta">
+        <h1>Entrar na Bet</h1>
+        <div id="error" class="error-message" aria-live="polite"></div>
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" placeholder="Digite seu login" autocomplete="username"
+                    required />
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha"
+                    autocomplete="current-password" required />
+            </div>
+            <button> <a href="inicio.html"> Entrar</a></button>
+        </form>
+    </div>
+</body>
+
+</html>

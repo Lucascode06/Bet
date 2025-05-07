@@ -1,0 +1,56 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jogos Online: Tesouros do Cerrado, Crash Run & Jogo da Mina</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="selector" aria-label="Seleção de jogos">
+    <h2>Escolha o jogo</h2>
+    <button id="btn-tesouros" class="active" aria-pressed="true">Tesouros do Cerrado</button>
+    <button id="btn-crash" aria-pressed="false">Crash Run</button>
+    <button id="btn-mina" aria-pressed="false">Jogo da Mina</button>
+  </nav>
+  <main id="games-container">
+    <!-- Tesouros do Cerrado game -->
+    <section id="tesouros" class="game active" role="region" aria-label="Jogo Tesouros do Cerrado" tabindex="0">
+      <h1>Tesouros do Cerrado</h1>
+      <div id="slot-machine" aria-live="polite" aria-atomic="true" aria-relevant="additions removals" tabindex="0">
+<div class="reel" id="reel1"></div>
+<div class="reel" id="reel2"></div>
+<div class="reel" id="reel3"></div>
+<div class="reel" id="reel4"></div>
+<div class="reel" id="reel5"></div>
+</div>
+<button id="spin-button" aria-label="Girar os rolos">Girar</button>
+<div id="score">Moedas: <span id="coin-count">100</span></div>
+<div id="message" aria-live="polite" aria-atomic="true"></div>
+<div id="confetti-container"></div>
+</section>
+<!-- Crash Run game -->
+<section id="crash" class="game" role="region" aria-label="Jogo Crash Run" tabindex="0">
+<h1>Crash Run</h1>
+<div id="multiplier-display">Multiplicador: <span id="multiplier">1.00x</span></div>
+<div id="graph-container" aria-hidden="true">
+  <div id="graph"></div>
+</div>
+<div id="controls">
+  <input type="number" id="bet-amount" placeholder="Aposta" min="1" step="1" value="10" aria-label="Valor da aposta">
+  <button id="start-button">Iniciar</button>
+  <button id="cashout-button" disabled>Sacar</button>
+</div>
+<div id="score-crash">Moedas: <span id="coin-count-crash">1000</span></div>
+<div id="message-crash" aria-live="polite"></div>
+</section>
+<!-- Jogo da Mina game -->
+<section id="mina" class="game" role="region" aria-label="Jogo da Mina" tabindex="0">
+<h1>Jogo da Mina</h1>
+<div id="grid" aria-label="Grade do jogo da mina"></div>
+<button id="restart-button">Reiniciar Jogo</button>
+<div id="message-mina" aria-live="polite"></div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
