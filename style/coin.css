@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .coin {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/88/1euro_head.png') no-repeat center/cover;
+    border-radius: 50%;
+    animation: none;
+  }
+  
+  .coin.flip {
+    animation: spin 1s ease-in-out;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(1800deg); }
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #ffc107;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  button:hover {
+    background: #e0a800;
+  }
+  
