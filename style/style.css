@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1170&q=80') no-repeat center center fixed;
@@ -29,7 +23,7 @@ body {
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 12px;
-  color: rgb(27, 168, 100);
+  color: #ffd700; /* Dourado */
   user-select: none;
   text-align: center;
 }
@@ -38,9 +32,9 @@ body {
   font-size: 1.1rem;
   padding: 12px 10px;
   border-radius: 8px;
-  border: 2px solid rgb(27, 168, 100);
+  border: 2px solid #4169e1; /* Azul royal */
   background: white;
-  color: rgb(27, 168, 100);
+  color: #4169e1;
   cursor: pointer;
   font-weight: 700;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -49,15 +43,14 @@ body {
 
 #selector button:hover,
 #selector button.active {
-  background-color: rgb(27, 168, 100);
-  ;
+  background-color: #4169e1;
   color: white;
 }
 
 #games-container {
   flex-grow: 1;
   overflow-y: auto;
-  background: rgba(255 255 255 / 0.92);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 0 20px 20px 0;
   box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -67,316 +60,90 @@ body {
   overflow-x: hidden;
 }
 
-/* Common style for games */
-.game {
-  width: 900px;
-  max-width: 95vw;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
-.game.active {
-  display: flex;
-}
-
-/* === Tesouros do Cerrado CSS === */
+/* Tesouros do Cerrado */
 #tesouros h1 {
   font-weight: 900;
   font-size: 2.8rem;
   margin: 0 0 12px;
-  color: rgb(27, 168, 100);
-  ;
-  text-shadow: 1px 1px 2px #855d01;
+  color: #4169e1;
+  text-shadow: 1px 1px 2px #ffd700;
   user-select: none;
   text-align: center;
-}
-
-#tesouros #slot-machine {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 10px;
-  user-select: none;
 }
 
 #tesouros .reel {
-  width: 80px;
-  height: 220px;
-  margin: 0 9px;
-  background: #fff3e0;
-  border-radius: 16px;
-  border: 3px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 72px;
-  color: #bf360c;
-  font-weight: 900;
-  position: relative;
-  overflow: hidden;
-}
-
-#tesouros .symbol {
-  animation-duration: 1.2s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-#tesouros .symbol.spin {
-  animation-name: spin-animation;
-}
-
-@keyframes spin-animation {
-  0% {
-    transform: translateY(-150%);
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(0) translateZ(0);
-    opacity: 1;
-  }
+  border: 3px solid #ffd700;
+  color: #4169e1;
 }
 
 #tesouros #spin-button {
-  background: rgb(27, 168, 100);
-  ;
+  background: #4169e1;
   color: #fff8e1;
-  padding: 14px 48px;
-  border-radius: 50px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  border: none;
-  box-shadow: 0 6px 10px;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  margin-top: 8px;
 }
 
 #tesouros #spin-button:disabled {
-  background: #fdd3a1;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-#tesouros #spin-button:hover:not(:disabled) {
-  background: rgb(27, 168, 100);
-  ;
+  background: #d3d3d3;
 }
 
 #tesouros #score {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-top: 18px;
-  color: #6d4c41;
-  text-shadow: 0 0 3px #ffe082;
-  user-select: none;
+  color: #5c3b00;
+  text-shadow: 0 0 3px #ffd700;
 }
 
 #tesouros #message {
-  margin-top: 18px;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: #2e7d32;
-  user-select: none;
-  min-height: 28px;
+  color: #1e90ff;
 }
 
-#tesouros #confetti-container {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: visible;
-}
-
-/* === Crash Run CSS === */
+/* Crash Run */
 #crash h1 {
-  color: rgb(27, 168, 100);
-  font-weight: 900;
-  font-size: 2.8rem;
-  margin-bottom: 12px;
+  color: #4169e1;
 }
 
 #crash #multiplier-display {
-  font-size: 2rem;
-  margin: 20px 0;
-  color: #bf360c;
-  font-weight: 700;
-}
-
-#crash #graph-container {
-  width: 100%;
-  height: 100px;
-  background: #e0e0e0;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+  color: #ffd700;
 }
 
 #crash #graph {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  background: rgb(27, 168, 100);
-  width: 0;
-  transition: width 0.1s linear;
-}
-
-#crash #controls {
-  margin-bottom: 20px;
+  background: #4169e1;
 }
 
 #crash input[type="number"] {
-  width: 80px;
-  padding: 10px;
-  border: 2px solid rgb(27, 168, 100);
-  ;
-  border-radius: 5px;
-  font-size: 1rem;
+  border: 2px solid #4169e1;
 }
 
 #crash button {
-  background: rgb(27, 168, 100);
-  ;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 10px;
-}
-
-#crash button:disabled {
-  background: #ffcc80;
-  cursor: not-allowed;
-}
-
-#crash button:hover:not(:disabled) {
-  background: rgb(27, 168, 100);
-  ;
+  background: #4169e1;
 }
 
 #crash #score {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #6d4c41;
+  color: #5c3b00;
 }
 
-#crash #message {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #d32f2f;
-}
-
-/* Confetti animation */
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  100% {
-    transform: translateY(350px) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-.confetti {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  pointer-events: none;
-  box-shadow: 0 0 8px;
-  animation-name: confetti-fall;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  z-index: 9999;
-  opacity: 1;
-}
-
-/* === Jogo da Mina CSS === */
+/* Mina */
 #mina h1 {
-  font-weight: 900;
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: rgb(27, 168, 100);
-  ;
-  user-select: none;
-  text-align: center;
-}
-
-#mina #grid {
-  display: grid;
-  grid-template-columns: repeat(5, 60px);
-  grid-template-rows: repeat(5, 60px);
-  gap: 5px;
-  justify-content: center;
-  margin-bottom: 15px;
+  color: #4169e1;
 }
 
 #mina .cell {
-  width: 60px;
-  height: 60px;
-  background: #f0f0f0;
-  border: 2px solid rgb(27, 168, 100);
-  ;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background 0.3s;
-  user-select: none;
+  border: 2px solid #4169e1;
 }
 
 #mina .cell:hover:not(.clicked):not(.mine) {
-  background: rgb(27, 168, 100);
-  ;
-}
-
-#mina .cell.clicked {
-  background: #d0ffd0;
-  cursor: default;
+  background: #4169e1;
+  color: white;
 }
 
 #mina .cell.mine {
-  background: rgb(27, 168, 100);
-  color: #3d1c00;
+  background: #ffd700;
+  color: #1e1e1e;
 }
 
 #mina #restart-button {
-  background: #ff6f00;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 24px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 10px;
-  user-select: none;
+  background: #ffd700;
+  color: #1e1e1e;
 }
 
 #mina #restart-button:hover {
-  background: rgb(27, 168, 100);
-}
-
-#mina #message-mina {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #d32f2f;
-  text-align: center;
-  min-height: 28px;
+  background: #4169e1;
+  color: white;
 }

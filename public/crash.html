@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crash Run</title>
+  <link rel="stylesheet" href="../style/crash.css">
+</head>
+
+<body>
+  <section id="crash" class="game" role="region" aria-label="Jogo Crash Run" tabindex="0">
+    <h1>Crash Run</h1>
+    <div id="multiplier-display">Multiplicador: <span id="multiplier">1.00x</span></div>
+    <div id="graph-container" aria-hidden="true">
+      <div id="graph"></div>
+    </div>
+    <div id="controls">
+      <input type="number" id="bet-amount" placeholder="Aposta" min="1" step="1" value="10" aria-label="Valor da aposta">
+      <button id="start-button">Iniciar</button>
+      <button id="cashout-button" disabled>Sacar</button>
+    </div>
+    <div id="score-crash">Moedas: <span id="coin-count-crash">1000</span></div>
+    <div id="message-crash" aria-live="polite"></div>
+
+    <!-- Avião -->
+    <div id="plane" class="plane"></div>
+
+    <a href="../public/dashbord.html" class="btn-voltar" aria-label="Voltar à página anterior">← Voltar</a>
+  </section>
+
+  <script src="../script/crash.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/mines.css">
+</head>
+
+<body>
+    <div id="mina">
+        <p>Moedas: <span id="coin-count-mina">1000</span></p>
+        <label>Minas: <input id="mine-count" type="number" value="5" min="1" max="24"></label>
+        <label>Aposta: <input id="bet-amount-mina" type="number" value="10" min="1"></label>
+        <button id="restart-button">Iniciar Jogo</button>
+        <button id="cashout-button" disabled>Sacar</button>
+        <div id="message-mina"></div>
+        <div id="grid" class="grid"></div>
+        <!-- Botão de voltar -->
+        <a href="../public/dashbord.html" class="btn-voltar" aria-label="Voltar à página anterior">← Voltar</a>
+    </div>
+    <script src="../script/mines.js"></script>
+</body>
+
+</html>

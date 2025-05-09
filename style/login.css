@@ -1,80 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-  }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0a0a23, #1b1b3a, #2e2e55); /* Azul escuro gradiente */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffd700; /* Dourado */
+}
+
+.login-container {
+  background: rgba(65, 105, 225, 0.08); /* Azul royal com transparência */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 320px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 215, 0, 0.2); /* Borda dourada sutil */
+}
+
+.login-container h1 {
+  margin: 0 0 25px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 1.2px;
+  color: #ffd700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #ccc;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+button {
+  width: 100%;
+  background: #ffd700; /* Dourado */
+  border: none;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a23; /* Contraste escuro */
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e6c200; /* Dourado mais escuro ao passar o mouse */
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media (max-width: 350px) {
   .login-container {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 30px 25px;
-    width: 320px;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    width: 90vw;
+    padding: 20px 15px;
   }
-  .login-container h1 {
-    margin: 0 0 25px;
-    font-weight: 600;
-    font-size: 1.8rem;
-    text-align: center;
-    letter-spacing: 1.2px;
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    outline: none;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    transition: background 0.3s ease;
-  }
-  input[type="text"]::placeholder,
-  input[type="password"]::placeholder {
-    color: #ccc;
-  }
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    background: rgba(255, 255, 255, 0.25);
-  }
-  button {
-    width: 100%;
-    background: #00b894;
-    border: none;
-    padding: 15px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: background 0.3s ease;
-  }
-  button:hover {
-    background: #019972;
-  }
-  .error-message {
-    color: #ff7675;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  @media (max-width: 350px) {
-    .login-container {
-      width: 90vw;
-      padding: 20px 15px;
-    }
-  }
+}
