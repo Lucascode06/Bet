@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta Premium - BetType</title>
+    <link rel="stylesheet" href="../style/roleta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="roleta-container">
+        <header class="bet-header">
+            <div class="header-left">
+                <button id="voltar-btn" class="btn-voltar">
+                    <a href="../public/dashbord.html" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </button>
+                <img src="../style/assets/Logo.png" alt="BetType" class="brand-logo">
+            </div>
+            <div class="balance-display">
+                <span>Saldo: R$</span>
+                <span id="saldo">500,00</span>
+                <i class="fas fa-plus-circle"></i>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="roleta">
+                <div class="seta"></div>
+                <div class="wheel"></div>
+            </div>
+
+            <div class="aposta-container">
+                <div class="aposta-opcoes">
+                    <div class="aposta-opcao" data-cor="vermelho">
+                        <div class="cor-display vermelho"></div>
+                        <span>Vermelho</span>
+                        <div class="odds">1:1</div>
+                    </div>
+                    <div class="aposta-opcao" data-cor="branco">
+                        <div class="cor-display branco"></div>
+                        <span>Branco</span>
+                        <div class="odds">1:7</div>
+                    </div>
+                    <div class="aposta-opcao" data-cor="preto">
+                        <div class="cor-display preto"></div>
+                        <span>Preto</span>
+                        <div class="odds">1:1</div>
+                    </div>
+                </div>
+
+                <div class="aposta-controle">
+                    <div class="valor-aposta">
+                        <button class="valor-btn" data-valor="-10">-10</button>
+                        <input type="number" id="valor-aposta" value="10" min="10">
+                        <button class="valor-btn" data-valor="+10">+10</button>
+                    </div>
+                    <button id="apostar-btn">Apostar R$<span id="valor-atual">10</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="resultado-container">
+            <div class="historico">
+                <h3>Últimos resultados:</h3>
+                <div id="historico-resultados"></div>
+            </div>
+            <div class="placar">
+                <div class="placar-item vermelho">
+                    <span>Vermelho:</span>
+                    <span id="cont-vermelho">0</span>
+                </div>
+                <div class="placar-item preto">
+                    <span>Preto:</span>
+                    <span id="cont-preto">0</span>
+                </div>
+                <div class="placar-item branco">
+                    <span>Branco:</span>
+                    <span id="cont-branco">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/roleta.js"></script>
+</body>
+
+</html>

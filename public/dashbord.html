@@ -3,24 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BetZone - Início</title>
+  <title>BetYpe - Início</title>
   <link rel="stylesheet" href="../style/dashbord.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Cabeçalho -->
+  <header class="bet-header">
+    <div class="header-content">
+      <h1>BetYpe</h1>
+      <div class="header-actions">
+        <!-- Indicador de Saldo -->
+        <div class="saldo-container">
+          <span class="saldo-moeda">R$</span>
+          <span class="saldo-valor">100,00</span>
+        </div>
+        
+        <!-- Ícone de Configurações com Badge -->
+        <div class="config-container">
+          <button id="config-toggle" class="config-btn">
+            <i class="fas fa-cog"></i>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu de Configurações -->
+  <div id="config-menu" class="config-menu">
+    <ul>
+      <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
+      <li><a href="#"><i class="fas fa-wallet"></i> Saldo</a></li>
+      <li><a href="#"><i class="fas fa-moon"></i> Tema Escuro</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+    </ul>
+  </div>
+
+  <!-- Conteúdo Principal -->
   <div class="container">
     <!-- Destaque: Fortune Capi -->
     <div class="highlight">
-      <a href="public/capi.html">
+      <a href="capi.html">
         <img src="../style/assets/capi.png" alt="Fortune Capi" />
       </a>
     </div>
 
-    <!-- Outros jogos -->
+    <!-- Grade de Jogos -->
     <div class="game-grid">
-      <a href="public/crash.html" class="game-card">
+      <a href="crash.html" class="game-card">
         <img src="../style/assets/aviao.png" alt="Crash Avião" />
       </a>
-      <a href="public/bombacoin.html" class="game-card">
+      <a href="mines.html" class="game-card">
         <img src="../style/assets/mines.png" alt="Bomba Coin" />
       </a>
       <a href="public/mines.html" class="game-card">
@@ -29,7 +63,7 @@
       <a href="public/coin.html" class="game-card">
         <img src="style/assets/coinflip.png" alt="Coin Flip" />
       </a>
-      <a href="public/roleta.html" class="game-card">
+      <a href="roleta.html" class="game-card">
         <img src="style/assets/roleta.png" alt="Roleta" />
       </a>
       <a href="public/blackjack.html" class="game-card">
@@ -40,5 +74,7 @@
       </a>
     </div>
   </div>
+
+  <script src="../script/script.js"></script>
 </body>
 </html>

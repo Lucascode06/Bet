@@ -1,10 +1,202 @@
+/* Estilos Base */
 body {
   margin: 0;
   padding: 0;
-  background-color: #4169e1; /* Azul royal */
+  background-color: #4169e1;
   font-family: 'Segoe UI', Tahoma, sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cabeçalho */
+.bet-header {
+  background-color: #1a1a2e;
+  color: #ffd700;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bet-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Indicador de Saldo */
+.saldo-container {
+  background-color: rgba(255, 215, 0, 0.2);
+  border: 1px solid #ffd700;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.saldo-container:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+}
+
+.saldo-moeda {
+  font-weight: bold;
+  color: #ffd700;
+  margin-right: 5px;
+}
+
+.saldo-valor {
+  font-weight: bold;
+  color: white;
+}
+
+/* Botão de Configurações */
+.config-container {
+  position: relative;
+  display: inline-block;
+}
+
+.config-btn {
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.config-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Badge de Notificações */
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.new-notification {
+  animation: bounce 0.5s, pulse 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-5px) scale(1.1);
+  }
+  60% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+/* Menu de Configurações */
+.config-menu {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 200px;
+  overflow: hidden;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.2s ease;
+  z-index: 99;
+}
+
+.config-menu.active {
+  transform: scale(1);
+}
+
+.config-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.config-menu li {
+  border-bottom: 1px solid #303030;
+}
+
+.config-menu li:last-child {
+  border-bottom: none;
+}
+
+.config-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.config-menu a:hover {
+  background-color: #16213e;
+}
+
+.config-menu i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Conteúdo Principal */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -14,11 +206,11 @@ body {
   align-items: flex-start;
 }
 
-/* Destaque do Fortune Capi */
+/* Destaque */
 .highlight {
   flex: 1 1 400px;
   max-width: 500px;
-  background-color: #ffd700; /* Dourado */
+  background-color: #ffd700;
   border-radius: 25px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.25);
@@ -38,7 +230,7 @@ body {
   object-fit: cover;
 }
 
-/* Grade dos jogos */
+/* Grade de Jogos */
 .game-grid {
   flex: 2 1 600px;
   display: grid;
