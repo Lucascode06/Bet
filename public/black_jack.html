@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack do Sertão</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../style/black_jack.css">
+</head>
+<body>
+  <div class="container">
+    <h1>♠️ Blackjack do Sertão ♥️</h1>
+    
+    <div id="saldo">Saldo: 1000 moedas</div>
+    
+    <div class="fichas">
+      <div class="ficha" style="background: #C0C0C0;" onclick="selecionarAposta(10)">10</div>
+      <div class="ficha" style="background: #FFD700;" onclick="selecionarAposta(25)">25</div>
+      <div class="ficha" style="background: #C9B037;" onclick="selecionarAposta(50)">50</div>
+      <div class="ficha" style="background: #B9F2FF;" onclick="selecionarAposta(100)">100</div>
+    </div>
+    
+    <div id="aposta">Aposta: 0 moedas</div>
+    
+    <h2>Mão do Jogador</h2>
+    <div class="cartas" id="mao-jogador"></div>
+    
+    <h2>Mão do Cangaceiro</h2>
+    <div class="cartas" id="mao-dealer"></div>
+    
+    <div id="resultado"></div>
+    
+    <div class="botoes">
+      <button id="pedir" onclick="pedirCarta()" disabled>Pedir Carta</button>
+      <button id="parar" onclick="parar()" disabled>Parar</button>
+      <button id="novo-jogo" onclick="novoJogo()">Novo Jogo</button>
+    </div>
+  </div>
+
+  <script src="../script/black_jack.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+:root {
+  --cor-terra: #8B4513;
+  --cor-couro: #D2B48C;
+  --cor-cacto: #556B2F;
+  --cor-sol: #FF8C00;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: url('https://i.imgur.com/JjQZQ9m.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(139, 69, 19, 0.85);
+  border: 5px solid var(--cor-couro);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+  color: var(--cor-sol);
+  text-shadow: 2px 2px 4px #000;
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+.cartas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.carta {
+  width: 80px;
+  height: 120px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: black;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.carta.verso {
+  background: linear-gradient(135deg, var(--cor-terra), var(--cor-cacto));
+  color: white;
+}
+
+button {
+  background: var(--cor-sol);
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--cor-sol);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#resultado {
+  font-size: 1.5rem;
+  min-height: 40px;
+  margin: 20px 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+
+#aposta {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.fichas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.ficha {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.ficha:hover {
+  transform: scale(1.1);
+}
+
+#saldo {
+  font-size: 1.5rem;
+  color: var(--cor-sol);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--cor-couro);
+  text-shadow: 1px 1px 2px black;
+}
