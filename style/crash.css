@@ -29,7 +29,7 @@ h1 {
   border-radius: 12px;
   padding: 40px 50px;
   width: 360px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -99,14 +99,13 @@ button:hover:not(:disabled) {
 #plane {
   width: 40px;
   height: 40px;
-  background-image: url('../style/assets/aviao.png');
+  background-image: url('assets/aviao.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  animation: none;
 }
 
 @keyframes fly {
@@ -118,6 +117,25 @@ button:hover:not(:disabled) {
     bottom: 85%;
     transform: translateX(-50%) rotate(-10deg);
   }
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.plane.explode {
+  animation: explode 0.8s forwards;
 }
 
 .btn-voltar {
@@ -141,7 +159,6 @@ button:hover:not(:disabled) {
   cursor: pointer;
 }
 
-.btn-voltar:hover,
-.btn-voltar:focus {
-  background-color: #ffd700;
+.btn-voltar:hover {
+  background-color: #e6c200;
 }

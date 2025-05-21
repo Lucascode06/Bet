@@ -18,6 +18,11 @@ function update() {
   coinDisplay.textContent = coins;
 }
 
+function gerarCrashPoint() {
+  const r = Math.random();
+  return Math.max(1.10, (1 / (1 - r)).toFixed(2));
+}
+
 function reset() {
   multiplier = 1.00;
   update();
@@ -35,12 +40,15 @@ function startGame() {
   if (isRunning) return;
 
   betAmount = parseInt(betInput.value);
-  if (isNaN(betAmount) || betAmount <= 0 || betAmount > coins) return;
+  if (isNaN(betAmount) || betAmount <= 0 || betAmount > coins) {
+    message.textContent = '⚠️ Aposta inválida!';
+    return;
+  }
 
   coins -= betAmount;
   update();
   isRunning = true;
-  crashPoint = (Math.random() * 5 + 1).toFixed(2);
+  crashPoint = gerarCrashPoint();
 
   startButton.disabled = true;
   cashoutButton.disabled = false;
@@ -53,10 +61,18 @@ function startGame() {
     multiplier += 0.05;
     update();
 
+    const bottomPercent = Math.min(40 + multiplier * 10, 85);
+    plane.style.bottom = bottomPercent + '%';
+
     if (multiplier >= crashPoint) {
       clearInterval(interval);
-      message.textContent = `💥 ${multiplier.toFixed(2)}x`;
-      reset();
+      message.textContent = `💥 Crash em ${multiplier.toFixed(2)}x`;
+      plane.classList.add('explode');
+
+      setTimeout(() => {
+        plane.classList.remove('explode');
+        reset();
+      }, 800);
     }
   }, 100);
 }
@@ -69,10 +85,12 @@ function cashOut() {
   coins += ganho;
   update();
 
-  message.textContent = `💰 ${ganho} @ ${multiplier.toFixed(2)}x`;
+  message.textContent = `💰 Ganhou ${ganho} moedas @ ${multiplier.toFixed(2)}x`;
   plane.style.animationPlayState = 'paused';
 
-  reset();
+  setTimeout(() => {
+    reset();
+  }, 500);
 }
 
 startButton.addEventListener('click', startGame);

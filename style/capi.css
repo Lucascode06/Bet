@@ -1,3 +1,4 @@
+/* Tema Brasileiro Simples e Bonito para o Slot */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
@@ -8,82 +9,92 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0a0a23, #1b1b3a, #2e2e55); /* Azul escuro gradiente */
+  background: #009739 ;
+  min-height: 100vh;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffd700; /* Dourado */
-  user-select: none;
+  color: #003087;
+  position: relative;
+}
+
+.logo-bet {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  z-index: 10;
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px #00973944);
 }
 
 .slot-machine {
-  background: rgba(65, 105, 225, 0.08); /* Azul royal com transparência */
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 40px 50px;
-  width: 360px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  background: #fff;
+  border-radius: 14px;
+  padding: 60px 5vw;
+  width: 95vw;
+  max-width: 600px;
+  min-height: 70vh;
+  box-shadow: 0 4px 24px 0 #00973922;
   text-align: center;
+  border: 1.5px solid #00973933;
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  color: #ffd700;
-  text-shadow: 0 0 6px #b38f00;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #009739;
+  letter-spacing: 1px;
 }
 
 .slots {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
-  gap: 12px;
+  margin: 24px 0 18px 0;
+  gap: 24px;
 }
 
 .slot {
-  font-size: 60px;
-  width: 80px;
-  height: 80px;
-  background: #000c24; /* azul muito escuro transparente */
-  border-radius: 10px;
-  line-height: 80px;
-  border: 2px solid rgba(255, 215, 0, 0.3);
+  font-size: 80px;
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  background: #fedf00;
+  border-radius: 8px;
+  border: 1.5px solid #00973955;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 8px #ffd700aa inset;
-  transition: background 0.3s, transform 0.6s;
-  color: #ffd700;
+  transition: background 0.3s, transform 0.5s, color 0.3s;
+  color: #003087;
 }
 
 .slot.spin {
-  animation: spin 1.2s ease-in-out;
+  animation: spin 1s linear;
+  background: #009739;
+  color: #fff;
 }
 
 @keyframes spin {
   0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(180deg); }
   100% { transform: rotate(360deg); }
 }
 
 button {
-  padding: 14px 30px;
-  font-size: 18px;
+  padding: 12px 0;
+  font-size: 1.1rem;
   cursor: pointer;
   border: none;
-  border-radius: 10px;
-  background: #ffd700;
-  color: #0a0a23;
+  border-radius: 8px;
+  background: #009739;
+  color: #fff;
   font-weight: 600;
-  letter-spacing: 1px;
-  transition: background 0.3s ease, transform 0.2s;
   width: 100%;
-  max-width: 320px;
-  margin: 10px auto 0;
-  display: block;
-  box-shadow: 0 0 10px #b38f00;
+  margin: 10px 0 0 0;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px #00973922;
 }
 
 button:disabled {
@@ -94,85 +105,75 @@ button:disabled {
 }
 
 button:hover:not(:disabled) {
-  background: #e6c200;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #e6c200;
+  background: #fedf00;
+  color: #009739;
+  transform: scale(1.04);
 }
 
 #resultado {
-  margin-top: 30px;
-  font-weight: 700;
-  font-size: 1.35rem;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 1.1rem;
   min-height: 32px;
-  color: #ffd700;
-  text-shadow: 0 0 8px #b38f00;
-  user-select: none;
-  min-height: 48px;
+  color: #009739;
 }
 
 #saldo-container {
-  margin-top: 25px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffd700;
+  margin-top: 18px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #003087;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  user-select: none;
-  text-shadow: 0 0 8px #b38f00;
+  gap: 6px;
 }
 
 #moedas-icon {
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   .slot-machine {
-    width: 90vw;
-    padding: 30px 20px;
-  }
-  .slots {
-    gap: 8px;
+    width: 99vw;
+    min-height: 60vh;
+    padding: 24px 2vw;
   }
   .slot {
-    width: 60px;
-    height: 60px;
-    font-size: 45px;
-    line-height: 60px;
+    width: 70px;
+    height: 70px;
+    font-size: 48px;
+    line-height: 70px;
   }
-  button {
-    max-width: 100%;
-    font-size: 16px;
-    padding: 12px 20px;
+  .slots {
+    gap: 10px;
   }
-  #saldo-container {
-    font-size: 1.3rem;
-    gap: 6px;
-  }
-  #moedas-icon {
-    font-size: 1.5rem;
+  .logo-bet {
+    top: 10px;
+    left: 10px;
+    width: 54px;
   }
 }
 
 .btn-voltar {
   display: inline-block;
-  margin-top: 25px;
-  padding: 10px 20px;
-  background-color: #ffd700;
-  color: #0a0a23;
+  margin-top: 18px;
+  padding: 8px 16px;
+  background: #fedf00;
+  color: #009739;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 10px #b38f00;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px #00973922;
+  border: none;
 }
 
 .btn-voltar:hover,
 .btn-voltar:focus {
-  background-color: #e6c200;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #e6c200;
+  background: #009739;
+  color: #fff;
+  transform: scale(1.04);
   outline: none;
 }
 

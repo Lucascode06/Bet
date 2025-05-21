@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo da Capivara - Slot</title>
+  <link rel="stylesheet" href="../style/capi.css" />
+</head>
+<body>
+  <main class="slot-machine" role="main" aria-label="Jogo da Capivara com moedas compartilhadas">
+    <h1> Jogo da Capivara</h1>
+    <div class="slots" aria-live="polite" aria-atomic="true">
+      <div class="slot" id="slot1">🦫</div>
+      <div class="slot" id="slot2">🦫</div>
+      <div class="slot" id="slot3">🦫</div>
+    </div>
+    <button id="girar" aria-label="Girar as roletas">Girar</button>
+    <div id="resultado" role="status"></div>
+    <div id="saldo-container" aria-label="Saldo do jogador">
+      <span id="moedas-icon">💰</span>
+      <span id="saldo">1000</span> moedas
+    </div>
+    <a href="../public/dashbord.html" class="btn-voltar" aria-label="Voltar à página anterior">← Voltar</a>
+  </main>
+  <script src="../script/capivara.js"></script>
+</body>
+</html>
+
+

@@ -1,81 +1,81 @@
-/* Estilos Base */
+/* Novo visual moderno para o dashboard */
 body {
   margin: 0;
   padding: 0;
-  background-color: #4169e1;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #FFCC29 0%, #009739 100%);
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f5f6fa;
+  min-height: 100vh;
   opacity: 0;
-  animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.7s ease-in forwards;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Cabeçalho */
 .bet-header {
-  background-color: #1a1a2e;
+  background: #002776;
   color: #ffd700;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 2px solid #ffd70033;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-.bet-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+#logo-img {
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px #FFCC29);
+  transition: transform 0.2s;
+}
+#logo-img:hover {
+  transform: scale(1.07) rotate(-2deg);
 }
 
 .header-actions {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
 }
 
 /* Indicador de Saldo */
 .saldo-container {
-  background-color: rgba(255, 215, 0, 0.2);
-  border: 1px solid #ffd700;
-  border-radius: 20px;
-  padding: 5px 15px;
-  margin-right: 15px;
+  background: linear-gradient(90deg, #ffd700 60%, #fffbe6 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 7px 22px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px #ffd70033;
+  transition: box-shadow 0.3s;
 }
-
 .saldo-container:hover {
-  background-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 16px #ffd70066;
 }
-
 .saldo-moeda {
-  font-weight: bold;
-  color: #ffd700;
-  margin-right: 5px;
+  font-weight: 700;
+  color: #232526;
+  margin-right: 6px;
+  font-size: 1.1rem;
 }
-
 .saldo-valor {
-  font-weight: bold;
-  color: white;
+  font-weight: 700;
+  color: #232526;
+  font-size: 1.1rem;
 }
 
 /* Botão de Configurações */
@@ -83,175 +83,195 @@ body {
   position: relative;
   display: inline-block;
 }
-
 .config-btn {
-  background: none;
+  background: linear-gradient(135deg, #ffd700 60%, #fffbe6 100%);
   border: none;
-  color: #ffd700;
-  font-size: 1.5rem;
+  color: #232526;
+  font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  position: relative;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #ffd70033;
+  transition: background 0.2s, transform 0.2s;
 }
-
 .config-btn:hover {
-  transform: rotate(90deg);
+  background: linear-gradient(135deg, #fffbe6 60%, #ffd700 100%);
+  transform: rotate(20deg) scale(1.08);
 }
 
 /* Badge de Notificações */
 .notification-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #e74c3c;
-  color: white;
+  top: 2px;
+  right: 2px;
+  background: #e74c3c;
+  color: #fff;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid #fffbe6;
+  font-weight: bold;
   animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.new-notification {
-  animation: bounce 0.5s, pulse 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  40% {
-    transform: translateY(-5px) scale(1.1);
-  }
-  60% {
-    transform: translateY(-3px) scale(1.05);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
 /* Menu de Configurações */
 .config-menu {
   position: fixed;
-  top: 70px;
-  right: 20px;
-  background-color: #1a1a2e;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  width: 200px;
+  top: 85px;
+  right: 30px;
+  background: rgba(26, 26, 46, 0.98);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  width: 220px;
   overflow: hidden;
   transform: scale(0);
   transform-origin: top right;
-  transition: transform 0.2s ease;
-  z-index: 99;
+  transition: transform 0.22s cubic-bezier(.68,-0.55,.27,1.55);
+  z-index: 101;
 }
-
 .config-menu.active {
   transform: scale(1);
 }
-
 .config-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .config-menu li {
-  border-bottom: 1px solid #303030;
+  border-bottom: 1px solid #ffd70022;
 }
-
 .config-menu li:last-child {
   border-bottom: none;
 }
-
 .config-menu a {
   display: flex;
   align-items: center;
-  padding: 12px 15px;
-  color: #fff;
+  padding: 15px 20px;
+  color: #ffd700;
   text-decoration: none;
-  transition: background-color 0.2s;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: background 0.18s, color 0.18s;
 }
-
 .config-menu a:hover {
-  background-color: #16213e;
+  background: #ffd70022;
+  color: #fffbe6;
 }
-
 .config-menu i {
-  margin-right: 10px;
-  width: 20px;
+  margin-right: 12px;
+  width: 22px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Conteúdo Principal */
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 40px;
+  gap: 40px;
+  padding: 50px 5vw 40px 5vw;
   justify-content: center;
   align-items: flex-start;
+  min-height: 70vh;
 }
 
 /* Destaque */
 .highlight {
-  flex: 1 1 400px;
-  max-width: 500px;
-  background-color: #ffd700;
-  border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  flex: 1 1 420px;
+  max-width: 520px;
+  background: linear-gradient(135deg, #ffd700 80%, #fffbe6 100%);
+  border-radius: 30px;
+  padding: 28px 24px;
+  box-shadow: 0 0 32px #ffd70033;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .highlight:hover {
-  transform: scale(1.02);
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 0 48px #ffd70066;
 }
-
 .highlight img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 22px;
   object-fit: cover;
+  box-shadow: 0 2px 16px #23252633;
 }
 
 /* Grade de Jogos */
 .game-grid {
-  flex: 2 1 600px;
+  flex: 2 1 650px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 28px;
 }
 
 .game-card {
-  background-color: #ffd700;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #ffd700 80%, #fffbe6 100%);
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 18px #ffd70033;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
 }
-
 .game-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.07) rotate(1deg);
+  box-shadow: 0 8px 32px #ffd70066;
 }
-
 .game-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 8px #23252622;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 2vw;
+  }
+  .highlight {
+    max-width: 100%;
+    padding: 18px 10px;
+  }
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bet-header {
+    padding: 1rem 0.5rem;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .container {
+    padding: 10px 0.5vw;
+  }
+  .highlight {
+    padding: 10px 2px;
+  }
 }
